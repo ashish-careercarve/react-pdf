@@ -16,6 +16,7 @@ const createEmbeddedFont = (PDFFont) =>
       this.id = id;
       this.subset = this.font.createSubset();
       this.unicode = [[0]];
+      this.unicode[gid] = this.font._cmapProcessor.codePointsForGlyph(glyph.id );
       this.widths = [this.font.getGlyph(0).advanceWidth];
 
       this.name = this.font.postscriptName;
